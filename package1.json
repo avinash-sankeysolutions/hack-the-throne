@@ -1,0 +1,40 @@
+{
+    "name": "sensitive-info-detector",
+    "displayName": "Sensitive Info Detector",
+    "description": "Detect and highlight sensitive information in your code.",
+    "version": "0.0.3",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:plaintext",
+        "onLanguage:javascript",
+        "onLanguage:typescript",
+        "onLanguage:python",
+        "onLanguage:html",
+        "onLanguage:css",
+        "onLanguage:markdown",
+        "onDidOpenTextDocument"
+    ],
+    "main": "/src/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.detectSensitiveInfo",
+                "title": "Detect Sensitive Info"
+            }
+        ]
+    },
+    
+    "configuration": {
+        "sensitiveInfoDetector.customKeywords": {
+          "type": "array",
+          "description": "Custom sensitive keywords to detect in code files.",
+          "default": []
+        }
+      }
+      
+}
